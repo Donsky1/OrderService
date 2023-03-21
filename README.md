@@ -17,7 +17,7 @@ git clone https://github.com/Donsky1/OrderService.git
 ```
 cd order_project
 ```
-<p>3. Запускаем контейнер  использую docker compose up<p>
+<p>3. Запускаем контейнер, используя docker compose up<p>
   
 ```
 docker compose up -d
