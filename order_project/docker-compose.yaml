@@ -1,0 +1,26 @@
+version: "4.1"
+services:
+  db:
+    image: postgres:15.1
+    environment:
+      POSTGRES_DB: django_pg
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: 1234
+    volumes: 
+        - postgres_data:/var/lib/postgresql/data/
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes: 
+        - .:/web
+    ports:
+      - "8000:8000"
+    environment: 
+        - DB_HOST=db
+        - DB_NAME=django_pg
+        - DB_USER=root
+        - DB_PASSWORD=1234
+    depends_on:
+      - db
+volumes:
+   postgres_data:
