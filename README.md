@@ -20,13 +20,21 @@ cd order_project
 ```
 docker compose up -d
 ```
-<p>4. Создадим новые миграции<p>
+<p>4. (option) В некоторых случаях может потребоваться перезапустить контейнеры, выполнив<p>
 
   ```
-manage.py makemigrations 
+docker compose down
+docker compose up -d
 ```
-<p>5. Применим миграции <p>
+<p>5. Узнаем имя web контейнера, чтобы выполнить команды django: makemigrations и migrate, createsuperuser<p>
 
   ```
-manage.py migrate  
+docker ps
+docker exec -ti order_project-web-1 bash
+python manage.py makemigrations
+python manage.py makemigrations userapp
+python manage.py makemigrations orderapp
+python manage.py migrate
+python manage.py createsuperuser
 ```
+<p>5. Выполнив все необходимые настройки и создав пользователя теперь можно зайти на сайт, используя созданного на предыдущем шаге администратора<p>
