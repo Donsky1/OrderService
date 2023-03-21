@@ -5,7 +5,7 @@
 <p id='#overview'>В проекте реализовано 2 приложения: userapp - пользователи, orderapp - основное приложение.</p>
 <br>
 <h2 id='installation'>Установка (с использованием docker)</h2>
-<p>1. Создаем директорию, клонируем проект в эту папку ... <p>
+<p>1. Клонируем проект<p>
 
 ```
 git clone https://github.com/Donsky1/OrderService.git
